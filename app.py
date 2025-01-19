@@ -135,6 +135,10 @@ def delete_recipe_htmx(recipe_id):
     db.session.commit()
     return '', 200
 
+@app.route('/health')
+def health_check():
+    return {'status': 'healthy'}, 200
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
