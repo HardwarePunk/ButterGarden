@@ -286,7 +286,7 @@ body {
   max-height: calc(100vh - 400px);
   overflow-y: auto;
   padding: var(--spacing-unit);
-  background: color-mix(in srgb, var(--recipe-card-bg) 95%, black);
+  background: color-mix(in srgb, var(--recipe-card-bg) 95%, var(--primary-color));
   border-radius: var(--border-radius);
   border: 1px solid var(--recipe-card-border);
 }
@@ -296,7 +296,7 @@ body {
 }
 
 .recipe-content::-webkit-scrollbar-track {
-  background: color-mix(in srgb, var(--recipe-card-bg) 98%, black);
+  background: color-mix(in srgb, var(--recipe-card-bg) 98%, var(--text-color));
   border-radius: 4px;
 }
 
