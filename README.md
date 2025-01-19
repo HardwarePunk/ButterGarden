@@ -14,7 +14,9 @@ A delightful recipe management application built with Flask, featuring a cozy, w
   - 👀 Regular users can browse recipes
 - 🎨 Beautiful, responsive design with custom styling
 - 🚀 Modern interactions using HTMX
-- 🌙 Warm, inviting color scheme
+- 🌙 Dark mode support with smooth transitions
+- 🎯 System theme detection and persistence
+- 🌟 Warm, inviting color scheme
 - 🐳 Docker support for easy deployment
 
 ## 🛠️ Technology Stack
@@ -23,7 +25,11 @@ A delightful recipe management application built with Flask, featuring a cozy, w
 - **Frontend**: HTMX + Custom CSS
 - **Database**: SQLite
 - **Authentication**: Flask-Login with Role-Based Access
-- **Styling**: CSS Variables + Modern CSS Features
+- **Styling**: 
+  - CSS Variables for theming
+  - Dark/Light mode with system preference detection
+  - Smooth theme transitions
+  - Modern CSS Features
 - **Deployment**: Docker + Gunicorn
 
 ## 🚀 Quick Start with Docker
