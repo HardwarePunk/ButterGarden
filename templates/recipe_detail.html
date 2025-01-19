@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="card">
-    <div class="card-body">
-        <h1 class="card-title mb-4">{{ recipe.title }}</h1>
-        
-        <h4 class="mb-3">Ingredients</h4>
-        <div class="mb-4">
+<div class="recipe-detail">
+    <h1>{{ recipe.title }}</h1>
+    
+    <div class="recipe-content">
+        <div class="recipe-section">
+            <h2>Ingredients</h2>
             {% for ingredient in recipe.ingredients.split('\n') %}
-            <div>{{ ingredient }}</div>
+                <div class="ingredient-item">{{ ingredient }}</div>
             {% endfor %}
         </div>
 
-        <h4 class="mb-3">Instructions</h4>
-        <div class="mb-4">
+        <div class="recipe-section">
+            <h2>Instructions</h2>
             {% for step in recipe.instructions.split('\n') %}
-            <p>{{ step }}</p>
+                <div class="instruction-item">{{ step }}</div>
             {% endfor %}
         </div>
-
-        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Recipes</a>
     </div>
 </div>
+
+<a href="{{ url_for('index') }}" class="btn btn-primary back-button">Back to Recipes</a>
 {% endblock %}

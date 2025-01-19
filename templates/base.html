@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Recipe Database{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <script src="{{ url_for('static', filename='js/htmx.min.js') }}"></script>
 </head>
@@ -12,7 +15,7 @@
         <nav class="sidebar">
             <div class="sidebar-content">
                 <div class="brand">
-                    <a href="{{ url_for('index') }}">Butter Garden</a>
+                    <a href="{{ url_for('index') }}">🧈 Butter Garden</a>
                 </div>
                 <div class="nav-links">
                     <a class="nav-link" href="{{ url_for('index') }}">Home</a>
