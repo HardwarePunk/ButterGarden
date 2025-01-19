@@ -1,44 +1,96 @@
+/* Light theme variables */
 :root {
   /* Colors */
-  --primary-color: #9B4819;     /* Warm terracotta */
-  --secondary-color: #D68C45;   /* Muted orange */
-  --success-color: #8C9B4C;     /* Olive green */
-  --danger-color: #C23B22;      /* Warm red */
-  --background-color: #FDF6EC;  /* Warm off-white */
-  --text-color: #2C1810;        /* Deep brown */
-
-  /* Recipe Card */
-  --recipe-card-bg: #ffffff;
-  --recipe-card-border: #E8D5C4;  /* Light warm beige */
-  --recipe-card-shadow: rgba(155, 72, 25, 0.1);
-  --recipe-card-title-color: #9B4819;  /* Same as primary */
-  --recipe-card-text-color: #594D46;   /* Muted brown */
-
-  /* Sidebar */
-  --sidebar-bg: #9B4819;          /* Primary color */
-  --sidebar-border: #B25F2C;      /* Lighter terracotta */
-  --sidebar-brand-color: #ffffff;
-  --sidebar-link-color: rgba(255, 255, 255, 0.9);
-  --sidebar-link-hover-color: #ffffff;
-  --sidebar-link-hover-bg: rgba(214, 140, 69, 0.2);  /* Secondary color with opacity */
-  --sidebar-mobile-height: 60px;
+  --primary-color: #9B4819;
+  --primary-color-dark: #7A3914;
+  --secondary-color: #D68C45;
+  --secondary-color-dark: #B37338;
+  --background-color: #FDF6EC;
+  --surface-color: #FFFFFF;
+  --text-color: #2C1810;
+  --text-color-light: #5C4037;
+  --border-color: #E8D5C4;
+  --error-color: #DC3545;
+  --error-color-dark: #BD2130;
+  --success-color: #28A745;
+  --link-color: #9B4819;
 
   /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
   --spacing-unit: 1rem;
   --container-max-width: 1200px;
 
   /* Typography */
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Open Sans", sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
   --font-family-brand: "Sour Gummy", cursive;
   --font-family-base: "Sour Gummy", system-ui, -apple-system, sans-serif;
   --font-size-base: 1rem;
   --line-height-base: 1.5;
 
-  /* Border Radius */
+  /* Effects */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
   --border-radius: 0.25rem;
   --border-radius-lg: 0.5rem;
-
-  /* Transitions */
   --transition-base: all 0.2s ease-in-out;
+
+  /* Recipe Card */
+  --recipe-card-bg: #ffffff;
+  --recipe-card-border: #E8D5C4;
+  --recipe-card-shadow: rgba(155, 72, 25, 0.1);
+  --recipe-card-title-color: #9B4819;
+  --recipe-card-text-color: #594D46;
+
+  /* Sidebar */
+  --sidebar-bg: #9B4819;
+  --sidebar-border: #B25F2C;
+  --sidebar-brand-color: #ffffff;
+  --sidebar-link-color: rgba(255, 255, 255, 0.9);
+  --sidebar-link-hover-color: #ffffff;
+  --sidebar-link-hover-bg: rgba(214, 140, 69, 0.2);
+  --sidebar-mobile-height: 60px;
+  --sidebar-desktop-width: 240px;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --primary-color: #FF8B4C;
+  --primary-color-dark: #E67A3D;
+  --secondary-color: #FFB07F;
+  --secondary-color-dark: #E69E70;
+  --background-color: #1A1A1A;
+  --surface-color: #2D2D2D;
+  --text-color: #F5E6D3;
+  --text-color-light: #D4C3B3;
+  --border-color: #404040;
+  --error-color: #FF4D4D;
+  --error-color-dark: #E63939;
+  --success-color: #4CAF50;
+  --link-color: #FF8B4C;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+  --recipe-card-bg: #2D2D2D;
+  --recipe-card-border: #404040;
+  --recipe-card-shadow: rgba(0, 0, 0, 0.3);
+  --recipe-card-title-color: #FF8B4C;
+  --recipe-card-text-color: #D4C3B3;
+  --sidebar-bg: #2D2D2D;
+  --sidebar-border: #404040;
+  --sidebar-brand-color: #F5E6D3;
+  --sidebar-link-color: rgba(255, 255, 255, 0.9);
+  --sidebar-link-hover-color: #F5E6D3;
+  --sidebar-link-hover-bg: rgba(214, 140, 69, 0.2);
 }
 
 /* Reset and base styles */
@@ -54,6 +106,7 @@ body {
   line-height: var(--line-height-base);
   color: var(--text-color);
   background-color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Layout */
@@ -172,29 +225,16 @@ body {
   text-decoration: none;
   display: inline-block;
   margin-right: calc(var(--spacing-unit) * 0.5);
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .btn:last-child {
   margin-right: 0;
 }
 
-.btn-primary {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: color-mix(in srgb, var(--primary-color) 85%, white);
-}
-
-.btn-danger {
-  background-color: color-mix(in srgb, var(--danger-color) 70%, transparent);
-  color: white;
-  backdrop-filter: blur(4px);
-}
-
-.btn-danger:hover {
-  background-color: var(--danger-color);
+.btn:hover {
+  background-color: var(--primary-color-dark);
 }
 
 /* Recipe grid layout */
@@ -262,7 +302,7 @@ body {
 
 @media (min-width: 768px) {
   .back-button {
-    left: calc(var(--sidebar-width) + var(--spacing-unit));
+    left: calc(var(--sidebar-desktop-width) + var(--spacing-unit));
   }
 }
 
@@ -334,6 +374,38 @@ body {
   border-bottom: none;
 }
 
+/* Theme toggle styles */
+.theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--surface-color);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
   .layout {
@@ -341,7 +413,7 @@ body {
   }
 
   .sidebar {
-    width: var(--sidebar-width);
+    width: var(--sidebar-desktop-width);
     border-right: 1px solid var(--sidebar-border);
     border-bottom: none;
     height: 100vh;
@@ -371,7 +443,6 @@ body {
   }
 
   .main-content {
-    margin-left: var(--sidebar-width);
     padding: calc(var(--spacing-unit) * 2);
   }
 
