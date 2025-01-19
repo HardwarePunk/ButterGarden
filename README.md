@@ -2,11 +2,16 @@
 
 A delightful recipe management application built with Flask, featuring a cozy, warm-toned interface and modern web technologies.
 
+🌟 **[Try the Demo](https://garden.hex.lgbt)** 🌟
+
 ## ✨ Features
 
 - 🔍 Browse and search recipes
 - 📝 View detailed recipe ingredients and instructions
-- 👤 Admin interface for managing recipes
+- 👥 Multi-user support with role-based permissions:
+  - 👑 Admin users can manage all recipes and users
+  - 👩‍🍳 Recipe managers can create and manage their own recipes
+  - 👀 Regular users can browse recipes
 - 🎨 Beautiful, responsive design with custom styling
 - 🚀 Modern interactions using HTMX
 - 🌙 Warm, inviting color scheme
@@ -17,7 +22,7 @@ A delightful recipe management application built with Flask, featuring a cozy, w
 - **Backend**: Flask + SQLAlchemy
 - **Frontend**: HTMX + Custom CSS
 - **Database**: SQLite
-- **Authentication**: Flask-Login
+- **Authentication**: Flask-Login with Role-Based Access
 - **Styling**: CSS Variables + Modern CSS Features
 - **Deployment**: Docker + Gunicorn
 
@@ -121,6 +126,47 @@ ADMIN_USERNAME=your-admin-username
 ADMIN_PASSWORD=your-secure-password
 FLASK_ENV=production  # or development
 ```
+
+## 👥 User Management
+
+Butter Garden supports three types of users:
+
+1. **Admin Users**
+   - Can manage all recipes
+   - Can add, edit, and delete users
+   - Can assign user roles
+   - Full access to all features
+
+2. **Recipe Managers**
+   - Can create new recipes
+   - Can edit and delete their own recipes
+   - Cannot manage other users
+   - Access to "My Recipes" dashboard
+
+3. **Regular Users**
+   - Can browse and view recipes
+   - Cannot create or edit recipes
+   - No access to management features
+
+### Default Users
+
+The application comes with two default users after initialization:
+
+1. **Admin User**
+   - Username: from ADMIN_USERNAME in .env
+   - Password: from ADMIN_PASSWORD in .env
+   - Full administrative access
+
+2. **Recipe Manager**
+   - Username: recipe_manager
+   - Password: manager123
+   - Can create and manage their own recipes
+
+To create additional users:
+1. Log in as an admin user
+2. Click "Manage Users" in the admin panel
+3. Click "Add New User"
+4. Fill in the username, password, and permissions
 
 ## 👩‍💻 Development
 
