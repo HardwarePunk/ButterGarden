@@ -23,8 +23,8 @@ A delightful recipe management application built with Flask, featuring a cozy, w
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/butter-garden.git
-   cd butter-garden
+   git clone https://github.com/HardwarePunk/ButterGarden.git
+   cd ButterGarden
    ```
 
 2. Create and activate a virtual environment:
@@ -71,7 +71,7 @@ FLASK_ENV=development
 The application uses modern CSS features and HTMX for enhanced interactivity:
 
 - CSS Variables for easy theme customization
-- Responsive design with mobile-first approach
+- Responsive design, mobile friendly
 - HTMX for dynamic content updates
 - Custom scrollbar styling
 - Sticky navigation elements
@@ -106,10 +106,4 @@ The app's appearance can be easily customized by modifying the CSS variables in 
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🌟 Acknowledgments
-
-- Font: "Sour Gummy" for that perfect whimsical touch
-- Color palette inspired by warm, inviting kitchen spaces
-- HTMX for making dynamic interactions a breeze
+This project is licensed under the Unlicense License - see the LICENSE file for details.
