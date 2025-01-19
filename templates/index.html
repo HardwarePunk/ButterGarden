@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+        <input type="text" 
+               name="query" 
+               class="form-control"
+               placeholder="Search recipes..."
+               hx-get="{{ url_for('search_recipes') }}"
+               hx-trigger="keyup changed delay:500ms"
+               hx-target="#recipe-list"
+               value="{{ search_query if search_query }}">
+        <div class="htmx-indicator">Searching...</div>
+    </div>
+</div>
+
+<div id="recipe-list" class="row">
+    {% include 'partials/recipe_list.html' %}
+</div>
+{% endblock %}
